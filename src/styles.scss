@@ -1,1 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+body {
+  background-image: url("./app/sourse/img/back-g.jpg");
+  background-size: cover; /* сохраняем оригинальный размер */
+  background-position: top left; /* размещаем в левом верхнем углу (или по центру, если хочешь) */
+  background-attachment: fixed;
+  color: white;
+  margin-left: 50px;
+  font-family: "Inter", sans-serif;
+}

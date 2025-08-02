@@ -1,0 +1,6 @@
+<div class="checkbox-items" *ngFor="let exp of experiments">
+  <label>
+    <input type="checkbox" [value]="exp" (change)="onToggle(exp, $event)" />
+    {{ exp }}
+  </label>
+</div>

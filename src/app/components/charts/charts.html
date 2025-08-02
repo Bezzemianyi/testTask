@@ -1,0 +1,11 @@
+<div class="metric-flex" *ngFor="let metric of metricNames">
+  <h3 class="metric-title">{{ metric }}</h3>
+  <canvas
+    class="diagram"
+    baseChart
+    [data]="chartData[metric]"
+    [options]="chartOptions"
+    chartType="line"
+  >
+  </canvas>
+</div>
