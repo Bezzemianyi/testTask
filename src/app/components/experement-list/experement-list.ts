@@ -22,7 +22,7 @@ export class ExperementList implements OnInit, OnDestroy {
 
   @Output() selectionChanged = new EventEmitter<string[]>();
 
-  private subscription!: Subscription; // вот тут оператор !
+  private subscription!: Subscription;
 
   constructor(private dataService: DataService) {}
 

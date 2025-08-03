@@ -1,11 +1,7 @@
 <h1>MLOps Logs Viewer</h1>
 <app-file-upload (fileParsed)="onFileParsed()"></app-file-upload>
-<!-- загрузка -->
 <app-experiment-list
   (selectionChanged)="onSelectionChanged($event)"
 ></app-experiment-list>
-<!-- выбор -->
 <app-charts [selectedExperiments]="selectedExperiments"></app-charts>
-<!-- графики -->
-
 <router-outlet />

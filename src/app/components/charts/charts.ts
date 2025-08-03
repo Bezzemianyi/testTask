@@ -12,10 +12,10 @@ import { DataService } from '../../services/data';
   styleUrl: './charts.scss',
 })
 export class Charts implements OnChanges {
-  @Input() selectedExperiments: string[] = []; // вход: выбранные эксперименты
+  @Input() selectedExperiments: string[] = []; 
 
-  chartData: any = {}; // данные для графиков
-  metricNames: string[] = []; // названия метрик
+  chartData: any = {}; 
+  metricNames: string[] = []; 
 
   chartOptions: ChartOptions = {
     responsive: false,
@@ -24,28 +24,28 @@ export class Charts implements OnChanges {
       x: {
         type: 'linear',
         ticks: {
-          color: '#ffffff', // цвет текста оси X
+          color: '#ffffff', 
         },
         grid: {
-          color: '#ffffff33', // сетка оси X (прозрачный белый)
+          color: '#ffffff33', 
         },
         title: {
           display: true,
           text: 'Step',
-          color: '#ffffff', // подпись оси X
+          color: '#ffffff', 
         },
       },
       y: {
         ticks: {
-          color: '#ffffff', // цвет текста оси Y
+          color: '#ffffff', 
         },
         grid: {
-          color: '#ffffff33', // сетка оси Y
+          color: '#ffffff33', 
         },
         title: {
           display: true,
           text: 'Value',
-          color: '#ffffff', // подпись оси Y
+          color: '#ffffff', 
         },
       },
     },
@@ -55,16 +55,16 @@ export class Charts implements OnChanges {
 
   ngOnChanges() {
     const COLORS = [
-      '#e6194b', // красный
-      '#3cb44b', // зеленый
-      '#ffe119', // желтый
-      '#4363d8', // синий
-      '#f58231', // оранжевый
-      '#911eb4', // фиолетовый
-      '#46f0f0', // бирюзовый
-      '#f032e6', // розово-фиолетовый
-      '#bcf60c', // лайм
-      '#fabebe', // светло-розовый
+      '#e6194b', 
+      '#3cb44b', 
+      '#ffe119', 
+      '#4363d8',
+      '#f58231', 
+      '#911eb4',
+      '#46f0f0', 
+      '#f032e6',
+      '#bcf60c',
+      '#fabebe', 
     ];
     const grouped = this.dataService.getMetricsByExperiment(
       this.selectedExperiments

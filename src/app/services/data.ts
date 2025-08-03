@@ -15,7 +15,7 @@ export class DataService {
       step: +d.step,
       value: +d.value,
     }));
-    this.dataChanged.next(); // уведомляем, что данные обновились
+    this.dataChanged.next();
   }
 
   getExperiments(): string[] {

@@ -5,27 +5,25 @@ import { DataService } from '../../services/data';
 
 @Component({
   selector: 'app-file-upload',
-  standalone: true, // standalone-компонент (без NgModule)
-  imports: [CommonModule], // подключаем CommonModule (для ngIf, ngFor и т.д.)
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './file-upload.html',
   styleUrl: './file-upload.scss',
 })
 export class FileUpload {
-  @Output() fileParsed = new EventEmitter<void>(); // событие, которое оповещает родителя, что файл распарсен
+  @Output() fileParsed = new EventEmitter<void>();
 
-  constructor(private dataService: DataService) {} // инжектим сервис для передачи данных
+  constructor(private dataService: DataService) {}
 
   onFileSelected(event: any) {
-    const file = event.target.files[0]; // получаем первый выбранный файл
+    const file = event.target.files[0];
 
     Papa.parse(file, {
-      // парсим CSV с помощью библиотеки PapaParse
-      header: true, // первая строка — заголовки
-      skipEmptyLines: true, // пропускаем пустые строки
+      header: true,
+      skipEmptyLines: true,
       complete: (result: any) => {
-        // по завершении парсинга вызывается callback
-        this.dataService.setRawData(result.data); // передаём распарсенные данные в сервис
-        this.fileParsed.emit(); // уведомляем родительский компонент
+        this.dataService.setRawData(result.data);
+        this.fileParsed.emit();
       },
     });
   }

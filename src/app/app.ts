@@ -15,10 +15,10 @@ export class App {
   selectedExperiments: string[] = [];
 
   onSelectionChanged(selected: string[]) {
-    this.selectedExperiments = selected; // обновляем выбранные эксперименты
+    this.selectedExperiments = selected;
   }
 
   onFileParsed() {
-    this.selectedExperiments = []; // сбрасываем выбор после загрузки нового файла
+    this.selectedExperiments = [];
   }
 }
